@@ -3,11 +3,17 @@ import React from 'react';
 // or less ideally
 import { Container, Card, Badge, Row, Col } from 'react-bootstrap';
 
+import { Loader } from './';
+
 const Posts = () => {
   return (
 	<div>
 		<Container>
 			<h3>Posts</h3>
+
+			{false? (
+				<Loader />
+			) : (
 			<Row xs={1} md={3} className="g-4">
 			{Array.from({ length: 4 }).map((_, idx) => (
 				<Col>
@@ -31,6 +37,7 @@ const Posts = () => {
 				</Col>
 			))}
 			</Row>	
+		)} 
 		</Container>
 		
 	</div>
